@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Datu Yurs</title>
+    <style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 35px 18px 55px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #eafff5;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(0,255,150,.18), transparent 28%),
+                radial-gradient(circle at 85% 80%, rgba(0,220,180,.16), transparent 30%),
+                linear-gradient(135deg, #031b16, #062b25 48%, #021510);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: .18;
+            background-image: linear-gradient(rgba(0,255,160,.13) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0,255,160,.13) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
+            animation: gridMove 18s linear infinite;
+        }
+        @keyframes gridMove {
+            from { background-position: 0 0; }
+            to { background-position: 42px 42px; }
+        }
+        .container { position: relative; max-width: 850px; margin: auto; }
+        .tag {
+            display: inline-block;
+            padding: 9px 17px;
+            border: 1px solid rgba(76,255,177,.5);
+            border-radius: 30px;
+            color: #8dffca;
+            letter-spacing: 3px;
+            font-size: 12px;
+            background: rgba(0,40,29,.55);
+            box-shadow: 0 0 18px rgba(0,255,150,.13);
+            animation: fadeDown .9s ease both;
+        }
+        h1 {
+            color: #54ffad;
+            font-size: clamp(25px, 5vw, 36px);
+            text-shadow: 0 0 12px rgba(0,255,150,.45);
+            margin: 25px 0 14px;
+        }
+        .main-title { margin-top: 22px; font-size: clamp(32px, 7vw, 48px); }
+        .profile-wrap {
+            width: 180px; height: 180px; margin: 28px auto;
+            padding: 6px; border-radius: 50%;
+            background: conic-gradient(#42ffad, #00bda0, #b1ffda, #42ffad);
+            box-shadow: 0 0 20px #00e99a, 0 0 55px rgba(0,255,150,.3);
+            animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite alternate;
+        }
+        .profile-wrap img {
+            display: block; width: 100%; height: 100%;
+            border: 4px solid #06251c; border-radius: 50%; object-fit: cover;
+        }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes glow { from { box-shadow: 0 0 16px #00e99a; } to { box-shadow: 0 0 34px #00e99a, 0 0 65px rgba(0,255,150,.4); } }
+        @keyframes fadeDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: translateY(0); } }
+        .intro { animation: fadeDown 1.1s ease both; }
+        .card {
+            margin: 22px auto;
+            padding: 20px 22px;
+            max-width: 700px;
+            border: 1px solid rgba(75,255,174,.28);
+            border-radius: 18px;
+            background: rgba(2,30,23,.78);
+            box-shadow: 0 8px 30px rgba(0,0,0,.25), inset 0 0 22px rgba(0,255,150,.035);
+            backdrop-filter: blur(8px);
+            transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+            animation: rise .8s ease both;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #54ffad;
+            box-shadow: 0 12px 35px rgba(0,255,150,.14);
+        }
+        @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .card h2 { color: #54ffad; margin: 0 0 10px; font-size: 23px; }
+        p { color: #d0e9dd; font-size: 17px; line-height: 1.7; margin: 8px 0; }
+        .skills { color: #8dffca; font-weight: bold; letter-spacing: 1px; }
+        .email {
+            display: inline-block; color: #8dffca; font-weight: bold;
+            text-decoration: none; border-bottom: 1px solid #54ffad;
+            padding-bottom: 3px; transition: color .25s, text-shadow .25s;
+        }
+        .email:hover { color: white; text-shadow: 0 0 12px #54ffad; }
+        footer { margin-top: 30px; color: #80a99a; font-size: 13px; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="tag">WELCOME TO MY DIGITAL SPACE</div>
+        <h1 class="main-title">MY PORTFOLIO</h1>
+
+        <div class="profile-wrap">
+            <img src="profile.jpg" alt="My Profile Picture">
+        </div>
+
+        <section class="intro">
+            <h1>Hello, I'm Datu Yurs!</h1>
+            <p>I am an Information Technology student.<br>
+            I love programming and web development.</p>
+        </section>
+
+        <section class="card">
+            <h2>About Me</h2>
+            <p>I enjoy learning new technologies and creating simple websites.</p>
+        </section>
+
+        <section class="card">
+            <h2>My Skills</h2>
+            <p class="skills">HTML | CSS | JavaScript | C++</p>
+        </section>
+
+        <section class="card">
+            <h2>My Projects</h2>
+            <p>Personal Portfolio Website</p>
+        </section>
+
+        <section class="card">
+            <h2>Contact Me</h2>
+            <p>Email: <a class="email" href="mailto:pyurhy@gmail.com">pyurhy@gmail.com</a></p>
+        </section>
+
+        <section class="card">
+            <h2>Personal Information</h2>
+            <p>Datu Yurs</p>
+            <p>Tabuh manuk Panamao Sulu</p>
+            <p>Male</p>
+        </section>
+
+        <footer>© 2026 Datu Yurs | Designed with HTML &amp; CSS</footer>
+    </main>
+</body>
+</html>
